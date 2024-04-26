@@ -20,10 +20,19 @@
         socket.on("connect", () => {
             console.log(socket.id);
         });
-        socket.on("message", (msg) => {
+
+        ///==>pre-defined event<==///
+        // socket.on("message", (msg) => {
+        //     document.getElementById('time').innerHTML = ''
+        //     document.getElementById('time').innerHTML = msg
+        // })
+
+        ///==>user defined event<==///
+        socket.on("myMsg", (msg) => {
             document.getElementById('time').innerHTML = ''
             document.getElementById('time').innerHTML = msg
         })
+
     </script>
 </body>
 

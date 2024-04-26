@@ -16,7 +16,12 @@ io.on("connection", (socket) => {
     setInterval(() => {
         const d = new Date() 
         const t = d.getTime()
-        socket.send(t)
+
+        ///==>pre-defined event<==///
+        // socket.send(t)
+
+        ///==>user defined event<==///
+        socket.emit('myMsg', t)
     },100)
     
     socket.on("disconnect", () => { 
